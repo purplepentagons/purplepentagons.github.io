@@ -2,23 +2,35 @@
     box-sizing: border-box;
     margin: 0;
     font-family: "Work Sans", sans-serif;
+    --background-color: #050505;
+    --text-color: #EEE;
+    --accent-color: #B5A2D1;
 }
 
 body {
     font-size: 12px;
     height: 100vh;
     overflow: hidden;
-    background-color: black;
+    background-color: var(--background-color);
 }
 
 .content-container {
+    padding: 4em 16px;
     height: 100%;
     overflow: auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
+    color: var(--text-color);
     font-size: 1.25rem;
+    overflow-y: auto;
+    clip-path: content-box;
+}
+
+
+.content > :not(:first-child) {
+    margin-left: 2rem;
+}
+
+h1 {
+    margin-bottom: 0.75rem;
 }
 
 .title {
@@ -37,7 +49,7 @@ body {
     position: absolute;
     width: 100%;
     font-size: 4rem;
-    color: #9d73dc;
+    color: var(--accent-color);
     font-weight: 900;
     animation: marquee 30s linear infinite;
     z-index: 1;
@@ -54,7 +66,7 @@ body {
     height: 100vh;
     z-index: 2;
     /* i hate fiddling with gradients */
-    background: linear-gradient(90deg, black, transparent 20%, transparent 80%, black);
+    background: linear-gradient(90deg, var(--background-color), transparent 20%, transparent 80%, var(--background-color));
 }
 
 @keyframes marquee {
@@ -65,4 +77,8 @@ body {
     100% {
         transform: translateX(-200%);
     }
+}
+
+lI::marker {
+    color: var(--accent-color)
 }
