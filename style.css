@@ -4,6 +4,7 @@
     font-family: "Chakra Petch", sans-serif;
     font-feature-settings: "tnum";
     --background-color: #050505;
+    --secondary-background-color: #232323;
     --text-color: #EEE;
     --border-color: #444;
     --accent-color: #af9fc4;
@@ -21,7 +22,7 @@ body {
     height: 100%;
     overflow: auto;
     color: var(--text-color);
-    font-size: 1.25rem;
+    font-size: 1.33rem;
     clip-path: content-box; 
 }
 
@@ -130,4 +131,32 @@ li::marker {
         color: var(--accent-color);
         transform: skew(0deg) scale(1);
     }
+}
+
+a {
+    color: var(--accent-color);
+    text-decoration: underline;
+}
+
+.tooltip {
+    transition: opacity 0.5s;
+    opacity: 0;
+    display: inline-block;
+    transition: opacity 0.5s;
+    margin: 0rem 1rem;
+    font-size: 1rem;
+    user-select: none;
+    background-color: var(--secondary-background-color);
+    padding: 0.4rem;
+    border-radius: 5px;
+    border: 1px solid var(--border-color);
+    position: fixed;
+}
+
+.project-list li a:hover + .tooltip {
+    opacity: 1;
+}
+
+li {
+    margin: 0.25rem 0rem;
 }
