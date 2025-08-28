@@ -17,13 +17,12 @@ body {
 }
 
 .content-container {
-    padding: 8rem 4rem;
+    padding: 6rem 2rem;
     height: 100%;
     overflow: auto;
     color: var(--text-color);
     font-size: 1.25rem;
-    clip-path: content-box;
-    backdrop-filter: blur(3px) saturate(25%);
+    clip-path: content-box; 
 }
 
 .content {
