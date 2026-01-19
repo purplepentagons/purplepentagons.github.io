@@ -151,6 +151,8 @@ a {
     border-radius: 5px;
     border: 1px solid var(--border-color);
     position: fixed;
+    text-wrap: stable;
+    max-width: 25rem;
 }
 
 .project-list li a:hover + .tooltip {
@@ -159,4 +161,14 @@ a {
 
 li {
     margin: 0.25rem 0rem;
+}
+
+.icon {
+    width: 1em;
+    height: 1em;
+    margin-right: 0.1em;
+}
+
+.title {
+    display: flex;
 }
