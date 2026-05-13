@@ -6,8 +6,8 @@
     --background-color: #050505;
     --secondary-background-color: #232323;
     --text-color: #EEE;
-    --border-color: #444;
-    --accent-color: #af9fc4;
+    --border-color: #474747;
+    --accent-color: #b892e9;
 }
 
 body {
@@ -15,6 +15,18 @@ body {
     font-size: 12px;
     height: 100vh;
     overflow: hidden;
+}
+
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+    .content-container {
+        transform: perspective(800px) rotateX(5deg) translateY(-60px) scaleX(0.9);
+        transform-origin: 50% 100%;
+        transition: all 150ms cubic-bezier(0.76, 0, 0.24, 1);
+    }
+
+    .content-container:hover {
+        transform: perspective(800px) rotateX(0deg) translateY(0px);
+    }
 }
 
 .content-container {
@@ -27,17 +39,15 @@ body {
 }
 
 .content {
+    display: flex;
+    flex-direction: column;
     padding: 1rem;
     height: 100%;
-    border: 1.5px solid var(--border-color);
-    border-radius: 25px;
-    background: radial-gradient(#FFFFFF20, #FFFFFF05);
+    border: 1px solid var(--border-color);
+    border-radius: 35px;
+    background: radial-gradient(#AAAAAA30, #AAAAAA00);
     overflow-y: auto;
     overflow-x: hidden;
-}
-
-.content > :not(:first-child) {
-    margin-left: 2rem;
 }
 
 h1 {
@@ -153,6 +163,7 @@ a {
     position: fixed;
     text-wrap: stable;
     max-width: 25rem;
+    pointer-events: none;
 }
 
 .project-list li a:hover + .tooltip {
@@ -171,4 +182,42 @@ li {
 
 .title {
     display: flex;
+}
+
+.battery {
+    align-self: flex-end;
+}
+
+.time {
+    align-self: flex-start;
+    border: 2px solid var(--text-color);
+    padding: 0 0.25rem;
+    border-radius: 0.5rem;
+}
+
+.top-bar {
+    position: sticky;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 2rem;
+}
+
+.battery, .time {
+    position: fixed;
+    display: flex;
+    gap: 0.25rem;
+    font-size: 1.33rem;
+    color: var(--text-color);
+    user-select: none;
+    font-weight: 900;
+    background-color: #05050599;
+}
+
+br {
+    margin-top: 1rem;
+}
+
+br.main-break {
+    margin-top: 3rem;
 }
