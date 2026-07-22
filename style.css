@@ -8,6 +8,7 @@
     --text-color: #EEE;
     --border-color: #474747;
     --accent-color: #b892e9;
+    --odd-accent-color: #a97fe0;
 }
 
 body {
@@ -109,6 +110,10 @@ li::marker {
     color: var(--accent-color)
 }
 
+li:nth-child(odd)::marker {
+    color: var(--odd-accent-color)
+}
+
 .name {
     font-weight: 300;
     position: relative;
@@ -144,8 +149,21 @@ li::marker {
 }
 
 a {
-    color: var(--accent-color);
+    /* color: var(--accent-color); */
+    color: inherit;
     text-decoration: underline;
+}
+
+li :not(a) {
+    color: var(--text-color);
+}
+
+li:nth-child(odd) a {
+    color: var(--odd-accent-color);
+}
+
+li:nth-child(even) a {
+    color: var(--accent-color);
 }
 
 .tooltip {
